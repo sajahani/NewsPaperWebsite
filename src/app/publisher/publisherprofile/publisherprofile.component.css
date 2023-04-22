@@ -1,0 +1,40 @@
+.form-contact .form-control:focus {
+    border: 1px solid #fc3f00;
+ }
+
+
+ .imgFile {
+    margin-top: 1rem;
+}
+
+.imgFile::file-selector-button {
+   
+    color: grey;
+    padding: 0.7em;
+    border: thin solid rgb(226, 223, 223)!important ;
+    border-radius: 5px;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-top: 80px;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+ 

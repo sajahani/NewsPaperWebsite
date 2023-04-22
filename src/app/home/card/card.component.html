@@ -1,0 +1,11 @@
+    <div class="trand-right-single d-flex">
+        <div class="trand-right-img">
+            <img [src]="productImage" alt="">
+        </div>
+        <div class="trand-right-cap">
+            <span class="color1">{{productName}}</span>
+            <h4><a 
+                  (click)="SendSelectedProduct(Id ,productImage,productName,productDescription)">
+                  {{productDescription}}</a></h4>
+               </div>
+    </div>

@@ -1,0 +1,134 @@
+<app-home-header></app-home-header>
+<section class="blog_area single-post-area section-padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 posts-list">
+
+            <div class="comment-form">
+               <h2>add your ADS</h2>
+               <form [formGroup]="adsForm" class="form-contact comment_form"  id="commentForm">
+                  <div class="row">
+
+                    
+                     <input type="hidden" formControlName="typeid">   
+
+                     <div class="col-sm-6">
+                        <div class="form-group">
+                           <input class="form-control" formControlName="title" id="name" type="text" placeholder="Title">
+                        </div>
+                     </div>
+                      
+
+                    
+
+                     <div class="col-sm-6">
+                        <div class="form-group">
+                           <mat-form-field appearance="outline" >
+                              <mat-label>Choose a date</mat-label> 
+                              <input matInput [matDatepicker]="datepicker" formControlName="adsdate">
+                              <mat-hint>MM/DD/YYYY</mat-hint>
+                              <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                              <mat-datepicker #datepicker>
+                                 <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                 </mat-datepicker-actions>
+                              </mat-datepicker>
+                           </mat-form-field>
+                       
+                        </div>
+                     </div> 
+                       
+                     
+
+
+
+    
+                     
+
+                     <div class="col-12">
+                        <div class="form-group">
+                           <textarea formControlName="description" class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                              placeholder="Write Comment"></textarea>
+                        </div>
+                     </div> 
+
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <input class="form-control imgFile"  type="file" #file (change)="UploadImageAds(file)" accept="image/*">
+                        </div>
+                     </div>
+                    
+                     
+                  </div>
+                  <div class="form-group">
+                     <button type="submit" (click)="CreateAdsfun()" class="button button-contactForm btn_1 boxed-btn">Send Ads</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         </div>
+         </div>
+         
+
+         <!-- <div class="col-lg-4">
+
+
+            <div class="trand-right-single d-flex" *ngFor="let item of homeService.spasificAdsUser">
+                <div class="trand-right-img">
+                    <img src="../../../assets/Images/{{item.imageads}}" alt="">
+                </div>
+                <div class="trand-right-cap">
+                    <span class="color1">{{item.title}}</span>
+                  
+                </div>
+            </div>
+           
+            
+
+            
+
+        </div> -->
+   
+ 
+</section>
+
+
+
+
+
+ <!--   Weekly-News start -->
+        <div class="weekly-news-area pt-50">
+            <div class="container">
+                <div class="weekly-wrapper">
+                   
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle mb-30">
+                                <h3>Your Ads</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="weekly-news-active dot-style d-flex dot-style" *ngFor="let item of homeService.spasificAdsUser">
+                                <div class="weekly-single">
+                                    <div class="weekly-img">
+                                        <img src="../../../assets/Images/{{item.imageads}}" alt="">
+                                    </div>
+                                    <div class="weekly-caption">
+                                        <span class="color1">title</span>
+                                        <h4><a href="#">{{item.title}}</a></h4>
+                                    </div>
+                                </div>
+                               
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- End Weekly-News -->
+
+
+  <app-home-footer></app-home-footer>

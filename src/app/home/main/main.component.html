@@ -1,0 +1,260 @@
+<!--Html-->
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<app-home-header></app-home-header>
+
+<!--ImageHeader-->
+<main>
+    <div class="container2">
+         <!-- <img src="../../../assets/Images/{{homeService.Homepage.homeimg}}"  height="700" width="100%">  -->
+         <img src="../../../assets/Images/3f1d9a58-5c7d-45d5-92e1-b26270dd298b_worker.jpg" height="700" width="100%">
+        <div class="centered">
+            <div class="text-block">{{homeService.Homepage.title}} </div>
+
+        </div>
+
+
+        <!--End ImageHeader-->
+
+
+
+
+
+
+
+        <!--About us-->
+        <div class="container">
+            <div class="row">
+                <div class="grid">
+
+                    <div class="image">
+                        <img src="../../assets/HomeAssets/assets/img/trending/trending_bottom1.jpg" alt="image">
+                    </div><!-- end of image div-->
+                    <div class="text">
+                        <h2 class="contact-title">Our Vision</h2>
+                        <p>{{homeService.Homepage.descabout}}</p>
+                        <a routerLink="/about" class="read-more">
+                            Read more <span class="sr-only">about this is some title</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div><!-- end of text div-->
+
+
+                </div><!--end of grid div-->
+
+            </div>
+        </div><!--end of container-->
+
+
+
+
+
+        <!--End About Us-->
+
+
+        <div class="comments-area">
+
+            <div class="row me-row content-ct speaker" id="speakers">
+                <div class="col-lg-12">
+                    <h2 class="contact-title">Our Services</h2>
+
+                    <div class="col-md-4 feature">
+                        <img src="../../../assets/HomeAssets/assets/img/about/newpaper-creative.png"
+                            class="speaker-img">
+                        <h3>Publisher Article</h3>
+                        <p>Our site offer publishing your article or news with a free service .</p>
+
+                    </div>
+                    <div class="col-md-4 feature">
+                        <img src="../../../assets/HomeAssets/assets/img/about/ads2.png" class="speaker-img">
+                        <h3>Advertisement</h3>
+                        <p>Our Site offers the service of adding your ads for a minimal fee .</p>
+
+                    </div>
+
+                    <div class="col-md-4 feature">
+                        <img src="../../../assets/HomeAssets/assets/img/about/world.png" class="speaker-img">
+                        <h3>AZ News </h3>
+                        <p>Our site offers all international and local news A to Z and all kinds of news . </p>
+                        <!-- <ul class="speaker-social">
+           <li><a href="#"><span class="ti-facebook"></span></a></li>
+           <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+           <li><a href="#"><span class="ti-linkedin"></span></a></li>
+         </ul> -->
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--  Recent Articles start -->
+
+        <div class="comments-area">
+
+            <div class="recent-articles">
+                <div class="container">
+                    <div class="recent-wrapper">
+                        <!-- section Tittle -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-tittle mb-30">
+                                    <h2 class="contact-title">Category Newspapers</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="recent-active dot-style d-flex dot-style">
+                                    <div class="single-recent mb-100" *ngFor="let i of homeService. AllNews ">
+                                        <div class="what-img">
+                                            <!-- <img src="../../../assets/HomeAssets/assets/img/news/bbc.png" alt=""> -->
+                                            <img src="../../../assets/Images/{{i.imagenews}}">
+                                        </div>
+                                        <div class="what-cap">
+                                            <span class="color1">{{i.type3}}</span>
+                                            <!-- <h4><a href="#">{{i.description3}}</a></h4> -->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Recent Articles End -->
+
+
+
+        <!--start contact us-->
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Contact Us</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form [formGroup]="ContactUsForm" class="form-contact contact_form" method="post"
+                            id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea formControlName="message4" class="form-control w-100" id="message"
+                                            cols="30" rows="9" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Enter Message'"
+                                            placeholder=" Enter Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input formControlName="fullname" class="form-control valid" id="name"
+                                            type="text" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input formControlName="email" class="form-control valid" id="email"
+                                            type="email" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" (click)="CreateContactusnews()"
+                                    class="button button-contactForm boxed-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                    <div class="col-lg-4">
+                        <app-card-ads [AllAds]="homeService.AllAds"></app-card-ads>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================ contact section end ================= -->
+
+
+        <!--testimonail-->
+        <section class="contact-section">
+            <div class="container1">
+                <div class="comments-area">
+                    <h2 class="contact-title">Feedback</h2>
+
+
+
+                    <div class="testimonial">
+                        <div class="containers1">
+                            <owl-carousel-o [options]="TestimoialSlider">
+                                <ng-template carouselSlide *ngFor="let slide of  homeService.AcceptTestimonial">
+                                    <div class="testimonial-image">
+                                        <img src="../../../assets/Images/{{slide.imagename3}}">
+
+                                    </div>
+                                    <div class="testimonial-content text-center">
+                                        <h2>
+                                            {{slide.firstname3}} {{slide.lastname3}}
+                                        </h2>
+                                        <h3>
+                                            <p> {{slide.message3}}</p>
+                                        </h3>
+                                    </div>
+                                </ng-template>
+
+                            </owl-carousel-o>
+
+                        </div>
+
+                    </div>
+
+
+                    <br>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+
+
+<!--End Testimonail-->
+
+
+<app-home-footer></app-home-footer>
+
+<script>
+    AOS.init({
+        duration: 1200,
+    })
+
+</script>

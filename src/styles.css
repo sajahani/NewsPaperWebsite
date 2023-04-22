@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif!important; }
+
+.testimonial .owl-prev , .testimonial .owl-next
+{
+    position: absolute !important;
+    background: #ffffff24!important;
+    width: 64px!important;
+    height: 64px!important;
+    border-radius: 50%!important;
+    z-index:2 !important;
+    font-size: 24px !important;
+    color:#111 !important ;
+    transition: all .3s ease !important;
+    top: 50% !important;
+    transform: translate(-50%,-50%)!important;
+}
+.testimonial .owl-prev
+{
+    left: 114px!important;
+}
+.testimonial .owl-next
+{ 
+    right: 48px !important;
+
+}
+
+.testimonial .owl-prev i, .testimonial .owl-next i
+{
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%) !important;
+}
+
+.testimonial .owl-prev:hover , .testimonial .owl-next:hover{
+    background:#fc3f00 !important;
+    color:#fff !important;
+
+}

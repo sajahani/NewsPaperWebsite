@@ -1,0 +1,43 @@
+<app-home-header></app-home-header>
+
+<div class="whole-wrap">
+
+    <div class="container box_1170">
+
+        <div class="section-top-border">
+            <h3 class="mb-30">WishList Page</h3>
+            <div class="progress-table-wrap">
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="country">Image</div>
+                        <div class="serial">Title</div>
+                        <div class="visit">Type Article</div>
+                        
+                        
+                       
+                        
+                    </div>
+
+                    <div class="table-row" *ngFor="let item of homeService.WishlistUser">
+                        <div class="country"> <img src="../../../assets/Images/{{item.imagearticals}}" width="100"  height="100"  alt="flag"></div>
+                        <div class="serial">{{item.title}}</div>
+                        <div class="visit">{{item.type}}</div>
+                        
+                        
+                       
+                    </div>
+                  
+                   
+                    
+                
+                  
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<app-home-footer></app-home-footer>

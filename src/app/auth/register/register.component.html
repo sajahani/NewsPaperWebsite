@@ -1,0 +1,119 @@
+<!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
+<app-home-header></app-home-header> 
+
+<br/>
+
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				
+			</div>
+		
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form [formGroup]="RegisterForm" >
+			<h2>Register</h2>	
+            <mat-form-field [style.width.px]=400 [style.height.px]=90>
+				<input type="text" matInput formControlName="firstname3" placeholder="First Name"/>
+				<mat-error *ngIf="RegisterForm.controls['firstname3'].hasError('required')">
+					First Name is <strong>required</strong>
+				</mat-error>
+            </mat-form-field>
+
+            <mat-form-field [style.width.px]=400 [style.height.px]=90>
+                <input type="text" matInput formControlName="lastname3" placeholder="Last Name"/>
+				<mat-error *ngIf="RegisterForm.controls['lastname3'].hasError('required')">
+					Last Name is <strong>required</strong>
+				</mat-error>
+            </mat-form-field>
+	
+            <mat-form-field [style.width.px]=400 [style.height.px]=90>
+                <input type="email" matInput formControlName="email3" placeholder="Email">
+                <mat-error *ngIf="RegisterForm.controls['email3'].hasError('email')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="RegisterForm.controls['email3'].hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+			
+			
+            <mat-form-field [style.width.px]=400 [style.height.px]=90>
+                <input type="password" matInput formControlName="password3" placeholder="Password">
+                <mat-error *ngIf="RegisterForm.controls['password3'].hasError('minlength')">
+                    Please enter a valid password
+                </mat-error>
+
+				<mat-error *ngIf="RegisterForm.controls['password3'].hasError('required')">
+					Password is <strong>required</strong>
+                </mat-error>
+                
+            </mat-form-field>
+
+
+			<div>
+				<mat-form-field [style.width.px]=400 [style.height.px]=90>
+				  <mat-label >Select an Role</mat-label>
+				  <mat-select  convert-to-number name="roleid3" formControlName="roleid3">
+					  <mat-option *ngFor="let i of authService.AllRole" [value] ="i.roleid3">{{i.rolename3}}</mat-option>
+					  </mat-select>
+					  <mat-error *ngIf="RegisterForm.controls['roleid3'].hasError('required')">
+						Role Name is <strong>required</strong>
+					  </mat-error>
+			  </mat-form-field>
+			  </div>
+			
+		
+			 
+				<input class="imgFile" style="height: 60px; width: 400px ;"  type="file" #file (change)="UploadImage(file)" accept="image/*">
+                
+
+			
+ 			
+	          <br>
+			 
+
+			
+			<input   type ="button" value="Register"  class="btn btn-danger"  style="background-color:#fc3f00;" [disabled]="RegisterForm.invalid"  (click)="RegisterationUser()"/>
+	    
+			
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome To Newspapers Website </h1>
+				<h1>Already have an account?</h1>
+				<br>
+				<br>
+
+			
+				<input routerLink="/auth/login"  class="button ghost"  style="border-color:white;"  id="signUp" type ="submit" value="login" />
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+<br/>
+
+
+<app-home-footer></app-home-footer>
+
+<!-- <script>
+   const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script> -->

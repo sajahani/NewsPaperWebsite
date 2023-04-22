@@ -1,0 +1,237 @@
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div id="wrapper">
+
+    <app-admin-sidebar></app-admin-sidebar>
+    <app-admin-header></app-admin-header>
+    <!-- /. NAV TOP  -->
+ <!-- /. NAV SIDE  -->
+ <div id="page-wrapper" >
+     <div id="page-inner">
+         <div class="row">
+             <div class="col-md-12">
+              <h2>ContactUs Manage Page</h2>   
+
+              <!-- <input type="button" class="btn btn-success" value="Create" (click)="OpenDialogCreate()">                             -->
+
+
+                 <!-- <h5>Welcome Jhon Deo , Love to see you back. </h5> -->
+             </div>
+         </div>              
+           <hr />
+         <hr />                
+         <!-- <div class="row">
+             <div class="col-md-6 col-sm-12 col-xs-12">           
+      </div>
+             
+             
+            
+             
+               
+             
+         
+          <!-- /. ROW  -->
+         <div class="row" >
+             <div class="col-md-3 col-sm-12 col-xs-12">
+
+
+             </div>
+             <div class="col-md-12 col-sm-12 col-xs-12">
+        
+             <div class="panel panel-default">
+                 <div class="panel-heading">
+                    <!-- Responsive Table Example -->
+
+                 </div>
+
+                 <div class="panel-body">
+                     <div class="table-responsive">
+
+                        <table class="table table-striped table-bordered table-hover">
+                            
+                            <thead>
+                                 <tr>
+                                     <th>fullname</th>
+                                     <th>email</th>
+                                     <th>message</th>
+
+                                     <th></th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                <tr *ngFor="let item of adminService.AllContactUsNews">
+                                                                           
+                                     <td>{{item.fullname}}</td>
+                                     <td>{{item.email}}</td>
+                                     <td>{{item.message4}}</td>
+
+                                
+                                   
+                                     <td>
+                                        <!-- <input type="button" value="Details" class="navbar-brand" class="icon-bar" (click)="GetById(item.contid)">
+                                        <input type="button" value="Update" class="navbar-brand" class="icon-bar" (click)="OpenUpdateDialog(item.contid)"> -->
+                                        <button  class="btn btn-danger square-btn-adjust" (click)="OpenDeleteDialog(item.contid)">
+                                         Delete </button>
+                                        </td> 
+
+                                    </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+             
+             </div>
+         </div> 
+          <!-- /. ROW 
+          
+           /. ROW  -->           
+</div>
+     </div>
+ </div>
+
+
+
+
+
+ <ng-template #DetailsForm>
+    <h1 mat-dialog-title>Dialog with elements</h1>
+    <div mat-dialog-content><p>{{this.adminService.AllContactUsNews.fullname}}</p>
+      <p>{{this.adminService.AllContactUsNews.email}}</p>  
+      <p>{{this.adminService.AllContactUsNews.message4}}</p></div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+</ng-template>
+
+
+
+
+<ng-template #UpdateForm>
+    <div mat-dialog-content> 
+      <form [formGroup]="UpdatecontactForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>type</mat-label>
+          <input type="text" matInput formControlName="fullname" >
+       
+          <mat-error *ngIf="UpdatecontactForm.controls['fullname'].hasError('required')">
+            fullname is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+    
+          <mat-label>Price</mat-label>
+          <input type="email" matInput formControlName="email" >
+       
+          <mat-error *ngIf="UpdatecontactForm.controls['email'].hasError('required')">
+            email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        
+
+        <mat-form-field class="example-full-width">
+        <mat-label>message4</mat-label>
+          <input type="text" matInput formControlName="message4" >
+       
+          <mat-error *ngIf="UpdatecontactForm.controls['message4'].hasError('required')">
+            message4 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    
+        
+    
+    
+    
+        
+    
+        <input type="button"  [disabled]="UpdatecontactForm.invalid" value="Update" mat-dialog-close (click)="UpdateeTypeAds()"  >
+      </form>
+</div>
+
+</ng-template>
+
+
+
+
+<ng-template #DeleteForm>
+    <h2 mat-dialog-content>Would you like to delete this item?</h2>
+    <div mat-dialog-actions>
+    <input mat-dialog-close value="Yes" type="button" class="btn btn-success" (click)="DeleteType()">
+    <input mat-dialog-close value="No" type="button" class="btn btn-error">
+    </div>
+    </ng-template>
+    
+    
+<ng-template #CreateForm>
+    <form [formGroup]="CreateContactForm" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>fullname</mat-label>
+        <input type="text" matInput formControlName="fullname" >
+        <mat-error *ngIf="CreateContactForm.controls['fullname'].hasError('required')">
+            fullname is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+  
+        <mat-label>email</mat-label>
+        <input type="email" matInput formControlName="email" >
+     
+        <mat-error *ngIf="CreateContactForm.controls['email'].hasError('required')">
+            email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    
+
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>message4</mat-label>
+          <input type="text" matInput formControlName="message4" >
+       
+          <mat-error *ngIf="CreateContactForm.controls['message4'].hasError('required')">
+            message4 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+      <input type="button"  [disabled]="CreateContactForm.invalid" value="Create" (click)="CreateTypeAds()"  >
+    </form>
+      
+  </ng-template>
+
+
+
+
+
+
+  <!-- <ng-template #CreateForm>
+    <form [formGroup]="CreateCourseForm" class="example-form">
+        <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="coursename" >
+          <mat-error *ngIf="CreateCourseForm.controls['coursename'].hasError('required')">
+            course name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="number" matInput formControlName="categoryid" >
+            <mat-error *ngIf="CreateCourseForm.controls['categoryid'].hasError('required')">
+              categoryid is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+    
+       <input type="file" #file (change)="UploadImage(file)">
+    <input type="button" [disabled]="CreateCourseForm.invalid" value="Create" (click)="CreateCourse()">
+    </div>
+    </form>
+    
+</ng-template> -->

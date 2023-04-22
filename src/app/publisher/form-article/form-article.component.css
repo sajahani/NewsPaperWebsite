@@ -1,0 +1,27 @@
+
+/* .form-contact .form-control {
+    border: 1px solid #979a9e;
+    border-radius: 5px;
+    height: 55px;
+    padding-left: 18px;
+    font-size: 13px;
+    background: transparent;
+} */
+
+
+.form-contact .form-control:focus {
+    border: 1px solid #fc3f00;
+ }
+
+
+ .imgFile {
+    margin-top: 1rem;
+}
+
+.imgFile::file-selector-button {
+   
+    color: grey;
+    padding: 0.7em;
+    border: thin solid rgb(226, 223, 223)!important ;
+    border-radius: 5px;
+}

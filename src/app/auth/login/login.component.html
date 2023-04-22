@@ -1,0 +1,77 @@
+<!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2> -->
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<app-home-header></app-home-header>
+
+<br>
+
+<br>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				
+				
+			
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#"   [formGroup]="loginForm">
+			<h2>Login</h2>
+			<div class="social-container">
+				
+				<!-- <a href="#" class="social"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="facebook"></mat-icon></a> -->
+			
+			</div>
+			<mat-form-field [style.width.px]=400 [style.height.px]=90>
+                <input type="email" matInput formControlName="email3" placeholder="Email">
+                <mat-error *ngIf="loginForm.controls['email3'].hasError('email')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="loginForm.controls['email3'].hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+			
+			
+			<mat-form-field [style.width.px]=400 [style.height.px]=90>
+                <input type="password" matInput formControlName="password3" placeholder="Password">
+                <mat-error *ngIf="loginForm.controls['password3'].hasError('minlength')">
+                    Please enter a valid password
+                </mat-error>
+                <mat-error *ngIf="loginForm.controls['password3'].hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+			<input   type ="button" value="Login"  class="btn btn-danger" style="background-color:#fc3f00;" [disabled]="loginForm.invalid"  (click)="loginUser()"/>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+			
+				<h1>Hello, Friend!</h1>
+				<h1>Enter your personal details and start journey with us</h1>
+				  <br>
+				 
+					<input routerLink="/auth/registerUser"  class="button ghost" style="border-color:white;"  id="signUp" type ="submit" value="Register" />
+			        
+					
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br/>
+
+
+<app-home-footer></app-home-footer>

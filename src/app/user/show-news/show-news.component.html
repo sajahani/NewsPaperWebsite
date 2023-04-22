@@ -1,0 +1,446 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+
+<app-home-header></app-home-header>
+
+<main>
+    <!-- Trending Area Start -->
+    <div class="trending-area fix">
+        <div class="container">
+            <div class="trending-main">
+                <!-- Trending Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="trending-tittle">
+                            <strong>Trending now</strong>
+                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+                            <div class="trending-animated">
+                                <ul id="js-news" class="js-hidden">
+                                    <li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li class="news-item">Spondon IT sit amet, consectetur.......</li>
+                                    <li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Trending Top -->
+                        <div class="trending-top mb-30">
+                            <div class="trend-top-img">
+                                <!-- <img src="../../../assets/HomeAssets/assets/img/trending/trending_top.jpg" alt="">
+                                <div class="trend-top-cap">
+                                    <span>Appetizers</span>
+                                    <h2><a href="details.html">Welcome To The Best Model Winner<br> Contest At Look of the year</a></h2>
+                                </div> -->
+                                <owl-carousel-o [options]="customOptions">
+
+
+                                    <ng-template *ngFor="let item of homeService.AllArticle" carouselSlide>
+                                        <img src="../../../assets/Images/{{item.imagearticals}}" width="750"
+                                            height="400" alt="image article">
+                                        <div class="trend-top-cap">
+                                            <span>{{item.type3}}</span>
+                                            <h2><a href="#">{{item.title}}<br></a></h2>
+                                        </div>
+                                    </ng-template>
+
+
+                                </owl-carousel-o>
+                            </div>
+                        </div>
+                        <!-- Trending Bottom -->
+                        <!-- <div class="trending-bottom">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                <div class="single-bottom mb-35">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="../../../assets/HomeAssets/assets/img/trending/trending_bottom1.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <span class="color1">Lifestyple</span>
+                                        <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="single-bottom mb-35">
+                                        <div class="trend-bottom-img mb-30">
+                                            <img src="../../../assets/HomeAssets/assets/img/trending/trending_bottom2.jpg" alt="">
+                                        </div>
+                                        <div class="trend-bottom-cap">
+                                            <span class="color2">Sports</span>
+                                            <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="single-bottom mb-35">
+                                        <div class="trend-bottom-img mb-30">
+                                            <img src="../../../assets/HomeAssets/assets/img/trending/trending_bottom3.jpg" alt="">
+                                        </div>
+                                        <div class="trend-bottom-cap">
+                                            <span class="color3">Travels</span>
+                                            <h4><a href="details.html"> Welcome To The Best Model Winner Contest</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- Riht content -->
+                 <div class="col-lg-4">
+                            <!-- <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img [src]="" alt="">
+                            </div>
+                            <div class="trand-right-cap">
+                                <span class="color1"></span>
+                                <h4><a href="details.html"></a></h4>
+                            </div>
+                        </div>  -->
+                      
+                        <div id="weather_wrapper">
+                            <div class="weatherCard">
+                                <div class="currentTemp">
+                                    <span class="temp">{{homeService.weather.main.temp}}<span>&deg;C</span></span>
+                                    <span class="location">{{homeService.weather.name}}</span>
+                                </div>
+                                <div class="currentWeather">
+                                    <span class="temp2" style="color: black;">{{homeService.weather.weather[0].description}}</span>
+                                   <span class="conditions">
+                                    <img  src="{{homeService.weather.icon}}">
+                                   </span>
+
+                                    
+                                    
+                                    <div class="info">
+                                        <span class="rain">{{homeService.weather.main.humidity}}</span>
+                                        <span class="wind">{{homeService.weather.wind.speed}} m/s</span>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Trending Area End -->
+        <!--   Weekly-News start -->
+        <!-- <div class="weekly-news-area pt-50">
+            <div class="container">
+                <div class="weekly-wrapper">
+                   
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle mb-30">
+                                <h3>Weekly Top News</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="weekly-news-active dot-style d-flex dot-style">
+                                <div class="weekly-single">
+                                    <div class="weekly-img">
+                                        <img src="../../../assets/HomeAssets/assets/img/news/weeklyNews2.jpg" alt="">
+                                    </div>
+                                    <div class="weekly-caption">
+                                        <span class="color1">Strike</span>
+                                        <h4><a href="#">Welcome To The Best Model Winner Contest</a></h4>
+                                    </div>
+                                </div>
+                                <div class="weekly-single active">
+                                    <div class="weekly-img">
+                                        <img src="../../../assets/HomeAssets/assets/img/news/weeklyNews1.jpg" alt="">
+                                    </div>
+                                    <div class="weekly-caption">
+                                        <span class="color1">Strike</span>
+                                        <h4><a href="#">Welcome To The Best Model Winner Contest</a></h4>
+                                    </div>
+                                </div>
+                                <div class="weekly-single">
+                                    <div class="weekly-img">
+                                        <img src="../../../assets/HomeAssets/assets/img/news/weeklyNews3.jpg" alt="">
+                                    </div>
+                                    <div class="weekly-caption">
+                                        <span class="color1">Strike</span>
+                                        <h4><a href="#">Welcome To The Best Model Winner Contest</a></h4>
+                                    </div>
+                                </div>
+                                <div class="weekly-single">
+                                    <div class="weekly-img">
+                                        <img src="../../../assets/HomeAssets/assets/img/news/weeklyNews1.jpg" alt="">
+                                    </div>
+                                    <div class="weekly-caption">
+                                        <span class="color1">Strike</span>
+                                        <h4><a href="#">Welcome To The Best Model Winner Contest</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- End Weekly-News -->
+        <!-- Whats New Start -->
+        <section class="whats-news-area pt-50 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-lg-3 col-md-3">
+                                <div class="section-tittle mb-30">
+                                    <h3>Whats New</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9">
+                                <div class="properties__button">
+                                    <!--Nav Button  -->
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
+                                                href="#nav-home" role="tab" aria-controls="nav-home"
+                                                aria-selected="true"></a>
+                                            <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab"
+                                                href="#nav-home" data-toggle="tab" *ngFor="let type of Types"
+                                                (click)="getNews(type)">{{type}}</a>
+
+                                        </div>
+                                    </nav>
+                                    <!--End Nav Button  -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Nav Card -->
+                                <div class="tab-content" id="nav-tabContent">
+                                    <!-- card one -->
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                        aria-labelledby="nav-home-tab">
+                                        <div class="whats-news-caption">
+                                            <div class="row">
+
+                                                <div class="col-lg-6 col-md-6"
+                                                    *ngFor="let i of homeService.TypeArticle">
+                                                    <div class="single-what-news mb-100">
+                                                        <div class="what-img">
+                                                            <img src="../../../assets/Images/{{i.imagearticals}}"
+                                                                width="360" height="335" alt="">
+                                                        </div>
+                                                        <div class="what-cap">
+                                                            <span class="color1">{{i.type}}</span>
+                                                            <h4><a href="#">{{i.title}}</a></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- End Nav Card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-40">
+                            <h3>Follow Us</h3>
+                        </div>
+                        <!-- Flow Socail -->
+                        <div class="single-follow mb-45">
+                            <div class="single-box">
+                                <div class="follow-us d-flex align-items-center">
+                                    <div class="follow-social">
+                                        <a href="#"><img src="../../../assets/HomeAssets/assets/img/news/icon-fb.png"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="follow-count">
+                                        <span>8,045</span>
+                                        <p>Fans</p>
+                                    </div>
+                                </div>
+                                <div class="follow-us d-flex align-items-center">
+                                    <div class="follow-social">
+                                        <a href="#"><img src="../../../assets/HomeAssets/assets/img/news/icon-tw.png"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="follow-count">
+                                        <span>8,045</span>
+                                        <p>Fans</p>
+                                    </div>
+                                </div>
+                                <div class="follow-us d-flex align-items-center">
+                                    <div class="follow-social">
+                                        <a href="#"><img src="../../../assets/HomeAssets/assets/img/news/icon-ins.png"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="follow-count">
+                                        <span>8,045</span>
+                                        <p>Fans</p>
+                                    </div>
+                                </div>
+                                <div class="follow-us d-flex align-items-center">
+                                    <div class="follow-social">
+                                        <a href="#"><img src="../../../assets/HomeAssets/assets/img/news/icon-yo.png"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="follow-count">
+                                        <span>8,045</span>
+                                        <p>Fans</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- New Poster -->
+
+
+                        <app-card-ads [AllAds]="homeService.AllAds"></app-card-ads>
+
+                        <!-- <img src="../../../assets/HomeAssets/assets/img/news/news_card.jpg" alt=""> -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Whats New End -->
+
+        <!-- Start card news -->
+        <div class="youtube-area video-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4" *ngFor="let item of homeService.AllArticle">
+                        <div class="card border-0">
+                            <div class="position-relative text-white">
+
+                                <div class="card-img-overlay three"
+                                    [ngStyle]="{'background-image': 'url(../../../assets/Images/' + item.imagearticals + ')'}"
+                                    alt="Card image cap">
+
+                                    <span class="badge badge-light text-uppercase">{{item.artdate|date}}</span>
+                                </div>
+
+                                <div class="--card-smooth-caption">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mr-auto">
+                                            <h5 class="card-title text-white">{{item.title}}</h5>
+                                            <!-- <h6 class="card-subtitle text-white">Altrnative caption</h6> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">{{item.descriptionart}}</p>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="media align-items-center">
+
+                                    <div class="media-body">
+                                        <!-- <a class="card-link text-primary read-more" href="javascript://">Read More</a> -->
+                                      
+                                        <!-- <i *ngIf="addToFavo"  (click)="handleAddAToFavo(item.newsid)" class="fas fa-heart"></i> -->
+                                        <!-- <i *ngIf="!addToFavo"  class="far fa-heart"></i> -->
+<!--                                      
+                                      <fa-icon [icon]="['far', 'heart'] " [ngClass]="{'filled': wishlistState[item.articalid]}" style="cursor: pointer;"(click)="handleAddAToFavo(item)"></fa-icon> 
+                                     <fa-icon [icon]="wishlistState ? ['fas', 'heart'] : ['far', 'heart']" style="color:red ;cursor: pointer;"(click)="handleRemoveAToFavo(item)"></fa-icon>  -->
+                                      
+
+
+                                       <button style="border-color:white; background-color: white;" (click)="handleAddAToFavo(item)" [ngClass]="{'filled': wishlistState[item.articalid]}">
+                                        <fa-icon (click)="handleRemoveAToFavo(item)" [ngClass]="{'filled': wishlistState[item.articalid]}"  style="color:#fc3f00; font-size:30px ; cursor:pointer;" 
+                                        [icon]="wishlistState[item.articalid] ? ['fas', 'heart'] : ['far', 'heart']"></fa-icon>
+                                      </button>
+
+                                    <!-- </div><fa-icon *ngIf="isFas; else farIcon" [icon]="['fas', 'heart']" (click)="toggleHeart(item)"></fa-icon>
+                                    <ng-template #farIcon>
+                                      <fa-icon [icon]="['far', 'heart']" (click)="toggleHeart(item)"></fa-icon>
+                                    </ng-template> -->
+
+
+                                    <div class="footerright">
+                                        <!-- <i class="fa fa-heart" [ngClass]="{'filled': wishlistState[item.articalid]}" (click)="handleAddAToFavo(item)"></i> -->
+
+                                        <!-- <span class="heart-icon"
+                                        [ngClass]="{ 'filled': wishlistState[item.articalid] }"
+                                        (click)="wishlistState[item.articalid] ? handleRemoveAToFavo(item) : handleAddAToFavo(item)">
+                                    <i class="fa fa-heart"></i>
+                                  </span> -->
+                                        <!-- <div class="tnlink3"><i class="fas fa-heart" aria-hidden="true"></i></div>
+                                        <div class="tnlink3"><i class="fas fa-share-nodes" aria-hidden="true"></i></div> -->
+                                    </div> <!-- <a class="like-button">
+                                  <span class="like-icon">
+                                    <span class="heart-animation-1"></span>
+                                    <span class="heart-animation-2"></span>
+                                  </span>
+                                  Favorite
+                                </a> -->
+<!--<button class="like-button"  type="submit" (click)="handleAddAToFavo(item)">Like</button> -->
+ <!--<button (click)="handleAddAToFavo(item)">Add to Wishlist <i class="fa fa-heart" [ngClass]="{'filled': wishlistState[item.articalid]}"></i></button>-->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <!--   Weekly2-News start -->
+            <div class="weekly2-news-area  weekly2-pading gray-bg">
+                <div class="container">
+
+                    <!-- section Tittle -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle mb-30">
+                                <h2> Type Ads </h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-sm-4 d-inline-block" *ngFor="let item of homeService.AllTypeAds">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.type}}</h5>
+                                <p class="card-text">Prcie : {{item.price | currency:'JOR' }}</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                <div class="form-group mt-3">
+                                    <button type="submit" (click)="GetIdAdsType(item)"
+                                        class="button button-contactForm boxed-btn">Add Ads</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Weekly-News -->
+          
+
+        </div>
+    </div>
+    </div>
+  </main>  
+            <app-home-footer></app-home-footer>

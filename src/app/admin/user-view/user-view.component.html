@@ -1,0 +1,304 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div id="wrapper">
+
+    <app-admin-sidebar></app-admin-sidebar>
+    <app-admin-header></app-admin-header>
+    <!-- /. NAV TOP  -->
+ <!-- /. NAV SIDE  -->
+ <div id="page-wrapper" >
+     <div id="page-inner">
+         <div class="row">
+             <div class="col-md-12">
+              <h2>User View</h2>   
+
+               <!-- <input type="button" class="navbar-brand" class="icon-bar"    value="Create" (click)="OpenDialogCreate()">                              -->
+
+
+                 <!-- <h5>Welcome Jhon Deo , Love to see you back. </h5> -->
+             </div>
+         </div>              
+           <hr />
+         <hr />                
+         <!-- <div class="row">
+             <div class="col-md-6 col-sm-12 col-xs-12">           
+      </div>
+             
+             
+            
+             
+               
+             
+         
+          <!-- /. ROW  -->
+         <div class="row" >
+             <div class="col-md-3 col-sm-12 col-xs-12">
+
+
+             </div>
+             <div class="col-md-12 col-sm-12 col-xs-12">
+        
+             <div class="panel panel-default">
+                 <div class="panel-heading">
+                    <!-- Responsive Table Example -->
+
+                 </div>
+
+                 <div class="panel-body">
+                     <div class="table-responsive">
+
+                        <table class="table table-striped table-bordered table-hover">
+                            
+                            <thead>
+                                 <tr>
+                                     <th>firstname</th>
+                                     <th>lastname</th>
+                                     <th>email</th>
+                                     <th>Role Name </th>
+                                     <!-- <th>userstatus</th> -->
+                                     <!-- <th>rolename</th> -->
+
+
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                <tr *ngFor="let item of adminService.AllUsers">
+                                                                           
+                                     <td>{{item.firstname3}}</td>
+                                     <td>{{item.lastname3}}</td>
+                                     <td>{{item.email3}}</td>
+                                     <td>{{item.rolename3}}</td>
+                                     <!-- <td>{{item.userstatus}}</td> -->
+                                     <!-- <td>{{item.rolename3}}</td> -->
+
+
+                                
+                                     
+                                      
+                                    </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+             
+             </div>
+         </div> 
+          <!-- /. ROW 
+          
+           /. ROW  -->           
+</div>
+     </div>
+ </div>
+
+
+
+
+<!-- 
+ <ng-template #DetailsForm>
+    <h1 mat-dialog-title>Dialog with elements</h1>
+    <div mat-dialog-content><p>{{this.adminService.HomePage.logoimg}}</p>
+      <p>{{this.adminService.HomePage.homeimg}}</p> 
+      <p>{{this.adminService.HomePage.footer}}</p>
+      <p>{{this.adminService.HomePage.email}}</p>
+      <p>{{this.adminService.HomePage.phone}}</p>
+      <p>{{this.adminService.HomePage.title}}</p>
+      <p>{{this.adminService.HomePage.titleabout}}</p>
+      <p>{{this.adminService.HomePage.descabout}}</p>
+      
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+</ng-template> 
+
+
+
+
+<ng-template #UpdateForm>
+    <div mat-dialog-content> 
+      <form [formGroup]="UpdateHomePageForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>footer</mat-label>
+          <input type="text" matInput formControlName="footer" >
+          <mat-error *ngIf="UpdateHomePageForm.controls['footer'].hasError('required')">
+            footer is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+    
+          <mat-label>email</mat-label>
+          <input type="email" matInput formControlName="email" >
+       
+          <mat-error *ngIf="UpdateHomePageForm.controls['email'].hasError('required')">
+            email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        
+
+
+        <mat-form-field class="example-full-width">
+    
+            <mat-label>phone</mat-label>
+            <input type="number" matInput formControlName="phone" >
+         
+            <mat-error *ngIf="UpdateHomePageForm.controls['phone'].hasError('required')">
+                phone is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+       
+          
+
+
+
+
+          <mat-form-field class="example-full-width">
+    
+            <mat-label>title</mat-label>
+            <input type="text" matInput formControlName="title" >
+         
+            <mat-error *ngIf="UpdateHomePageForm.controls['title'].hasError('required')">
+                title is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+       
+          
+
+
+          <mat-form-field class="example-full-width">
+    
+            <mat-label>titleabout</mat-label>
+            <input type="text" matInput formControlName="titleabout" >
+         
+            <mat-error *ngIf="UpdateHomePageForm.controls['titleabout'].hasError('required')">
+                titleabout is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+       
+          
+
+
+          <mat-form-field class="example-full-width">
+    
+            <mat-label>descabout</mat-label>
+            <input type="text" matInput formControlName="descabout" >
+         
+            <mat-error *ngIf="UpdateHomePageForm.controls['descabout'].hasError('required')">
+                descabout is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+       
+          
+
+
+
+
+
+
+          <input formControlName="logoimg" type="file" #file (change)="UploadImage1(file)" > 
+
+          <input   formControlName="homeimg" type="file" #file1 (change)="UploadImage2(file1)" > 
+
+    
+        <input type="button"   value="Update" mat-dialog-close (click)="UpdateeHome()"  >
+      </form>
+</div>
+
+</ng-template> 
+
+
+
+
+<ng-template #DeleteForm>
+    <h2 mat-dialog-content>Would you like to delete this item?</h2>
+    <div mat-dialog-actions>
+    <input mat-dialog-close value="Yes" type="button" class="btn btn-success" (click)="DeleteHome()">
+    <input mat-dialog-close value="No" type="button" class="btn btn-error">
+    </div>
+    </ng-template>
+     
+    
+ <ng-template #CreateForm>
+    <form [formGroup]="CreateHomePageForm" class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>footer</mat-label>
+            <input type="text" matInput formControlName="footer" >
+            <mat-error *ngIf="CreateHomePageForm.controls['footer'].hasError('required')">
+              footer is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+      
+            <mat-label>email</mat-label>
+            <input type="email" matInput formControlName="email" >
+         
+            <mat-error *ngIf="CreateHomePageForm.controls['email'].hasError('required')">
+              email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          
+  
+  
+          <mat-form-field class="example-full-width">
+      
+              <mat-label>phone</mat-label>
+              <input type="number" matInput formControlName="phone" >
+           
+              <mat-error *ngIf="CreateHomePageForm.controls['phone'].hasError('required')">
+                  phone is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+         
+            
+  
+  
+  
+  
+            <mat-form-field class="example-full-width">
+      
+              <mat-label>title</mat-label>
+              <input type="text" matInput formControlName="title" >
+           
+              <mat-error *ngIf="CreateHomePageForm.controls['title'].hasError('required')">
+                  title is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+         
+            
+  
+  
+            <mat-form-field class="example-full-width">
+      
+              <mat-label>titleabout</mat-label>
+              <input type="text" matInput formControlName="titleabout" >
+           
+              <mat-error *ngIf="CreateHomePageForm.controls['titleabout'].hasError('required')">
+                  titleabout is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+         
+            
+  
+  
+            <mat-form-field class="example-full-width">
+      
+              <mat-label>descabout</mat-label>
+              <input type="text" matInput formControlName="descabout" >
+           
+              <mat-error *ngIf="CreateHomePageForm.controls['descabout'].hasError('required')">
+                  descabout is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+         
+         
+     
+      <input type="file" #file1 (change)="UploadImage1(file1)" > 
+      <input type="file" #file (change)="UploadImage2(file)" >  -->
+    
+      <!-- <input type="button"  value="Create" (click)="CreateHomePage()"  >
+    </form>
+      
+  </ng-template> 
+ -->
